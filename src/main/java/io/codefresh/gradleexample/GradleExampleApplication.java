@@ -8,7 +8,7 @@ public class GradleExampleApplication {
 
 	public static void main(String[] args) {
 		System.out.println("testing hello hello");
-		SpringApplication.run(GradleExampleApplication.class, args);
+		//SpringApplication.run(GradleExampleApplication.class, args);
 	}
 
 }
