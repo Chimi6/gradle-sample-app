@@ -28,6 +28,7 @@ pipeline {
          steps {
             sh "docker build . -t gradelsample"
             sh "docker run -p 8080:8080 gradelsample"
+            sh "docker images ps"
             //sh "docker tag gradelsample calebcall97/gradelsample:$BUILD_NUMBER"
          }
       }
