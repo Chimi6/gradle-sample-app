@@ -1,13 +1,13 @@
 {
-  "Image": "agiletrailblazers/website-motd:latest",
+  "Image": "calebcall97/gradelsampl:12",
   "ExposedPorts": {
-    "3000/tcp": {}
+    "8080/tcp": {}
   },
   "HostConfig": {
     "PortBindings": {
-      "3000/tcp": [
+      "8080/tcp": [
         {
-          "HostPort": "3000"
+          "HostPort": "8081"
         }
       ]
     },
