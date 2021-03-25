@@ -26,7 +26,7 @@ pipeline {
   
       stage("Docker Build and Tag") {
          steps {
-            sh "docker build . -t calebcall97/gradelsample:$BUILD_NUMBER"
+            sh "docker build . -t calebcall97/gradelsample:latest"
             
             //sh "docker tag gradelsample calebcall97/gradelsample:$BUILD_NUMBER"
          }
@@ -35,7 +35,7 @@ pipeline {
       stage("Docker Push") {
          steps {
             withDockerRegistry(credentialsId: 'calebcall97', url: 'https://index.docker.io/v1/') {
-               sh "docker push calebcall97/gradelsample:$BUILD_NUMBER"
+               sh "docker push calebcall97/gradelsample:latest"
             }
          }
       }
