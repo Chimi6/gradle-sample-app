@@ -23,28 +23,14 @@ pipeline {
             sh "docker ps"
          }
       }
-   /*   stage("JUnit Test") {
-         steps {
-          sh "'${M2_HOME}/bin/mvn' clean test"
-         }
-      }
-      stage("Integration Test") {
-         steps {
-         sh "'${M2_HOME}/bin/mvn' integration-test"
-         }
-      }
-      stage("Perfromance Test") {
-         steps {
-            sh "'${M2_HOME}/bin/mvn' verify"
-         }
-      }
-      */
+  
       stage("Docker Build and Tag") {
          steps {
-            sh "docker build -t pranaycirruslabs/calculator ."
-            sh "docker tag calculator pranaycirruslabs/calculator:$BUILD_NUMBER"
+            sh "docker build . -t my-app"
+            //sh "docker tag calculator pranaycirruslabs/calculator:$BUILD_NUMBER"
          }
       }
+      /*
       stage("Docker Push") {
          steps {
             withDockerRegistry(credentialsId: 'pranaycirruslabs-docker', url: 'pranaycirruslabs/calculator') {
@@ -52,6 +38,7 @@ pipeline {
             }
          }
       }
+      */
       stage("Deploy") {
          steps {
             timeout(time: 10, unit: 'MINUTES') {
