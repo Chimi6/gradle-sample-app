@@ -27,14 +27,14 @@ pipeline {
       stage("Docker Build and Tag") {
          steps {
             sh "docker build . -t my-app"
-            sh "docker tag gradelSample calebcall97/gradelSample:$BUILD_NUMBER"
+            sh "docker tag gradelsample calebcall97/gradelsample:$BUILD_NUMBER"
          }
       }
       
       stage("Docker Push") {
          steps {
-            withDockerRegistry(credentialsId: 'calebcall97', url: 'calebcall97/gradelSample') {
-               sh "docker push calebcall97/gradelSample:$BUILD_NUMBER"
+            withDockerRegistry(credentialsId: 'calebcall97', url: 'calebcall97/gradelsample') {
+               sh "docker push calebcall97/gradelsample:$BUILD_NUMBER"
             }
          }
       }
