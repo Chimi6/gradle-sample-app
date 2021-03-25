@@ -1,11 +1,11 @@
 {
   "Image": "calebcall97/gradelsampl:latest",
   "ExposedPorts": {
-    "8080/tcp": {}
+    "8081/tcp": {}
   },
   "HostConfig": {
     "PortBindings": {
-      "8080/tcp": [
+      "8081/tcp": [
         {
           "HostPort": "8081"
         }
