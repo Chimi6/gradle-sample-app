@@ -1,5 +1,5 @@
 {
-  "Image": "calebcall97/gradelsampl:12",
+  "Image": "calebcall97/gradelsampl:latest",
   "ExposedPorts": {
     "8080/tcp": {}
   },
