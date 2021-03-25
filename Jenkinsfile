@@ -26,7 +26,7 @@ pipeline {
   
       stage("Docker Build and Tag") {
          steps {
-            sh "docker build . -t my-app"
+            sh "docker build . -t gradelsample"
             sh "docker tag gradelsample calebcall97/gradelsample:$BUILD_NUMBER"
          }
       }
