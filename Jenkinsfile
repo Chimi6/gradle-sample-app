@@ -44,6 +44,8 @@ pipeline {
          steps {
             timeout(time: 10, unit: 'MINUTES') {
            input message: 'Deploy this web app to production ?'
+               sh"./deploy.sh"
+               
          }
       }
       }
