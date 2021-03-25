@@ -27,18 +27,18 @@ pipeline {
       stage("Docker Build and Tag") {
          steps {
             sh "docker build . -t my-app"
-            //sh "docker tag calculator pranaycirruslabs/calculator:$BUILD_NUMBER"
+            sh "docker tag gradelSample calebcall97/gradelSample:$BUILD_NUMBER"
          }
       }
-      /*
+      
       stage("Docker Push") {
          steps {
-            withDockerRegistry(credentialsId: 'pranaycirruslabs-docker', url: 'pranaycirruslabs/calculator') {
-               sh "docker push pranaycirruslabs/calculator:$BUILD_NUMBER"
+            withDockerRegistry(credentialsId: 'calebcall97', url: 'calebcall97/gradelSample') {
+               sh "docker push calebcall97/gradelSample:$BUILD_NUMBER"
             }
          }
       }
-      */
+      
       stage("Deploy") {
          steps {
             timeout(time: 10, unit: 'MINUTES') {
