@@ -1,5 +1,5 @@
 {
-  "Image": "calebcall97/gradelsample:latest-master",
+  "Image": "calebcall97/gradelsample:latest",
   "ExposedPorts": {
     "8080/tcp": {}
   },
